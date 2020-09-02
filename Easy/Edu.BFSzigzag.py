@@ -30,3 +30,5 @@ def traverse(root):
     result.append(currentlevel)
     
   return result
+
+#Generally correct, logic was done properly and the method executed as promised. Need to research more into appendleft function 
