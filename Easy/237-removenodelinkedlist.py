@@ -1,3 +1,16 @@
+# Question: 237. Remove Node from Linked List 
+
+# Attempts: 1
+# Completed: Y 
+# Optimal: Y
+
+# Time: O(n)
+# Space: O(1)
+
+# Problems Encountered: None 
+
+# Other Solutions:
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):

@@ -1,15 +1,24 @@
-def max_sub_array_of_size_k(k, arr):
+def smallest_subarray_with_given_sum(s, arr):
   # TODO: Write your code here
-  # need a variable to store the maximum sum 
-  maxsum = 0
-  #need a for loop to iterate through the array until the end of the window hits the end of the array
-  for i in range (len(arr) -k + 1):
-  #need a variable to store the window sum 
-    windowsum = 0
-  #need a for loop to keep track of the window 
-    for j in range (i, i+k):
-  #add the numbers in the window 
-      windowsum += arr[j]
-  #need to compare the max sum with window sum 
-    maxsum = max(maxsum, windowsum)
-  return maxsum 
+  # Steps:
+  # insert 2 into windowsum = 2, windowsize =1, windowstart remains 0, maxsize = 10000.  
+  # insert 1 into windowsum = 3, window size = 2, windowstart remains 0, maxsize = 10000
+  # insert 5 into window sum = 8, window size = 3, windowstart remains 0, max size = 10000 
+  # while loop initiated. window sum is 6, window size = 3, window start is 1, max size updated to 3. 
+  # insert 2 into window sum = 8, window size is 3, window start remains 1, max size is 3 
+  # while loop is initiated. windowsum = 8, window size = 3, window start 2, max size is 3
+  # while loop is initiated. windowsum = 7, window size = 2, window start 2, max size is 2
+  # 
+  #
+  windowsum, minsize, windowstart,windowsize = 0,10000,0,0; 
+  for windowend in range(len(arr)):
+    windowsum += arr[windowend]
+    windowsize += 1; 
+    while windowsum >= s:
+      windowsum -= arr[windowstart]
+      windowstart +=1
+      minsize = min(minsize, windowsize)
+      windowsize -= 1
+    
+  
+  return minsize 
